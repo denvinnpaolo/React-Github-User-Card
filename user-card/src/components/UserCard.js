@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, Icon, Image } from "semantic-ui-react";
+import RepoModal from "./RepoModal"
 
 function UserCard(props){
     return(
@@ -20,6 +21,7 @@ function UserCard(props){
         <a>
           <Icon name='user' />
           <a href={props.user.html_url}>Github Profile</a>
+          <p><RepoModal user={props.user}/></p>
         </a>
       </Card.Content>
     </Card>

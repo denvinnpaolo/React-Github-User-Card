@@ -11,7 +11,8 @@ class App extends React.Component {
     this.state=({ 
       user: [],
       userFollowers:[],
-      userSearch:""
+      userSearch:"",
+      count:0
     })
   }
 
@@ -28,14 +29,14 @@ class App extends React.Component {
 
       if( prevState !== this.state.user ){
         let count = 0;
-        if(count!==1){
+        if(this.state.count!==1){
         axios
         .get('https://api.github.com/users/justsml/following')
         .then(user=>{
-          this.setState({ userFollowers:user.data })
+          this.setState({ userFollowers:user.data, count:1 })
+          console.log(user)
         })
         .catch(err=>console.log(err))
-        return count++
         }
       }
     }
