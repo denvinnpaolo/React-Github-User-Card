@@ -3,6 +3,7 @@ import { Card, Icon, Image } from "semantic-ui-react";
 
 function UserCard(props){
     return(
+      <div className="card">
       <Card>
       <Image src={props.user.avatar_url} wrapped ui={false} />
       <Card.Content>
@@ -22,6 +23,7 @@ function UserCard(props){
         </a>
       </Card.Content>
     </Card>
+    </div>
     )
 }
 
